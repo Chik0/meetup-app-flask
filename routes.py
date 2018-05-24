@@ -30,7 +30,7 @@ def login():
             })
         user = db.session.query(User).filter(User.email == content['email']).first()
         if user:
-            if bcrypt.checkpw(content['password'].encode('utf8'), user[0].password.decode().encode('utf-8')):
+            if bcrypt.checkpw(content['password'].encode('utf8'), user.password.decode().encode('utf-8')):
                 return json.dumps({
                     'code': '0',
                     'msg': 'Successful Login',
