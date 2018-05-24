@@ -23,7 +23,7 @@ def login():
     """
     if request.method == 'POST':
         content = request.get_json(silent=True)
-        if not content or content.get('email', False) or not content.get('password', False):
+        if not content or not content.get('email', False) or not content.get('password', False):
             return json.dumps({
                 'code': '1',
                 'msg': 'Invalid Request'
