@@ -37,8 +37,9 @@ def login():
                     'user': {
                         'id': user.id,
                         'email': user.email,
-                        'first_name': user.first_name,
-                        'last_name': user.last_name
+                        'firstName': user.first_name,
+                        'lastName': user.last_name,
+                        'message': user.message
                     }
                 })
             else:
@@ -56,8 +57,8 @@ def login():
             'user': {
                 'id': new_user.id,
                 'email': new_user.email,
-                'first_name': new_user.first_name,
-                'last_name': new_user.last_name
+                'firstName': new_user.first_name,
+                'lastName': new_user.last_name
             }
         })
     return json.dumps({
@@ -95,7 +96,7 @@ def user_locations():
         }
         for loc in locations:
             loc_dict['locations'].append({
-                'create_date': loc.create_date.strftime("%Y-%m-%d %H:%M"),
+                'createDate': loc.create_date.strftime("%Y-%m-%d %H:%M"),
                 'lng': loc.long,
                 'lat': loc.lat
 
@@ -173,7 +174,7 @@ def map_locations():
                     'message': user.message,
                     'lat': loc.lat,
                     'lng': loc.long,
-                    'create_date': loc.create_date.strftime("%Y-%m-%d %H:%M")
+                    'createDate': loc.create_date.strftime("%Y-%m-%d %H:%M")
                 })
         return json.dumps(loc_dict)
 
