@@ -169,9 +169,9 @@ def map_locations():
             if loc.user_id not in users:
                 users.append(loc.user_id)
                 loc_dict['locations'].append({
-                    'name': user.first_name,
-                    'surname': user.last_name,
-                    'message': user.message,
+                    'name': loc.user.first_name,
+                    'surname': loc.user.last_name,
+                    'message': loc.user.message,
                     'lat': loc.lat,
                     'lng': loc.long,
                     'createDate': loc.create_date.strftime("%Y-%m-%d %H:%M")
